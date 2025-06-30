@@ -8,20 +8,16 @@ INICIAR
 
 docker-compose up -d
 
------------ SI HAY ERRORES O SE DECEA ELIMIAR -------------------------------------------
+----------- SI HAY ERRORES O SE DECEA ELIMIAR -------------
 
 ELIMINA TODOS LOS CONENEDORES RELACIONADOS A docker-compose.yml.
 
-docker compose down -v
+docker compose domn -v
 
 CREAR TODO DE NUEVO
 
 docker compose up -d
 
-LEO iNKLING 
- /\_/\  
-( o.o ) 
- > ^ <
 
 
 modo cliente servidor
