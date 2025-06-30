@@ -1,0 +1,34 @@
+version: '3.9'
+
+services:
+  ollama:
+    image: ollama/ollama
+    container_name: ollama2
+    ports:
+      - "11434:11434"
+    volumes:
+      - ollama_data:/root/.ollama
+    restart: unless-stopped
+
+  anythingllm:
+    image: mintplexlabs/anythingllm:latest
+    container_name: anythingllm
+    ports:
+      - "3001:3001"
+    depends_on:
+      - ollama
+    environment:
+      - OLLAMA_BASE_URL=http://ollama:11434
+      - STORAGE_DIR=/app/server/storage
+      - JWT_SECRET=A2hQ10sPo0
+      - AUTH_MODE=local
+      - ADMIN_EMAIL=leoinkling92@gmail.com       
+      - ADMIN_PASSWORD=A2hQ10sPo0
+    volumes:
+      - anythingllm_data:/app/server/storage
+    restart: unless-stopped
+    command: /bin/sh -c "rm -rf /app/server/storage/sessions/* && node server.js"
+
+volumes:
+  ollama_data:
+  anythingllm_data:

@@ -1,0 +1,38 @@
+----------- PARA EVITAR QUE SE PIERDAN DATOS ES NECESARIO USAR ESTOS CODIGOS -------------
+ 
+CERRAR 
+
+docker-compose down
+
+INICIAR 
+
+docker-compose up -d
+
+----------- SI HAY ERRORES O SE DECEA ELIMIAR -------------------------------------------
+
+ELIMINA TODOS LOS CONENEDORES RELACIONADOS A docker-compose.yml.
+
+docker compose down -v
+
+CREAR TODO DE NUEVO
+
+docker compose up -d
+
+LEO iNKLING 
+ /\_/\  
+( o.o ) 
+ > ^ <
+
+
+modo cliente servidor
+
+desactivar el firewall
+netsh advfirewall set allprofiles state off
+activar firewall 
+netsh advfirewall set allprofiles state on
+
+iniciar desde otro equipo
+
+la ip del equipo servidor
+
+http://192.168.1.100:3001
