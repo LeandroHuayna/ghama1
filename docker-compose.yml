@@ -3,7 +3,7 @@ version: '3.9'
 services:
   ollama:
     image: ollama/ollama
-    container_name: ollama2000
+    container_name: ollama2
     ports:
       - "11434:11434"
     volumes:
@@ -11,10 +11,10 @@ services:
     restart: unless-stopped
 
   anythingllm:
-    image: mintplexlabs/anythingllm:latest 22222
+    image: mintplexlabs/anythingllm:latest
     container_name: anythingllm
     ports:
-      - "3002:3002"
+      - "3001:3001"
     depends_on:
       - ollama
     environment:
